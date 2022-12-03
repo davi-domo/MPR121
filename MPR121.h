@@ -62,7 +62,7 @@
 class MPR121
 {
 	public:
-		MPR121(int address, uint8_t irqPin);
+		MPR121(int address, uint8_t irqPin, uint8_t i2c_sda, uint8_t i2c_slc);
 		void setup();
 		void readTouchInputs(byte status[]);
 

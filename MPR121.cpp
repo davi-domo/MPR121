@@ -7,11 +7,12 @@
 #include "MPR121.h"
 #include <Wire.h>
 
-MPR121::MPR121(int address, uint8_t irqPin){
+MPR121::MPR121(int address, uint8_t irqPin, uint8_t i2c_sda, uint8_t i2c_slc){
 
 	_address = address;
 	_irqPin = irqPin;
 	pinMode(_irqPin, INPUT_PULLUP);
+	Wire.setPins(i2c_sda,i2c_slc);
 	Wire.begin();
 }               
 
